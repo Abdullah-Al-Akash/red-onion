@@ -10,6 +10,7 @@ import Login from './components/Login/Login/Login';
 import Header from './components/Header/Header';
 import FoodDetails from './components/FoodDetails/FoodDetails';
 import AuthProvider from './components/Contexts/AuthProvider';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -24,9 +25,9 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
-            <Route path="/food/:foodId">
+            <PrivateRoute path="/food/:foodId">
               <FoodDetails></FoodDetails>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>

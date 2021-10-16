@@ -9,26 +9,30 @@ const Header = () => {
         return (
                 <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                         <div className="container">
-                                <a className="navbar-brand" href="#">
+                                <a className="navbar-brand" href="/">
                                         <img src={logo} className="img-fluid" width="130px" alt="" />
                                 </a>
                                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                         <span className="navbar-toggler-icon"></span>
                                 </button>
                                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                                        <ul className="navbar-nav ms-auto text-center mb-2 mb-lg-0">
                                                 <li className="nav-item">
-                                                        <NavLink to="/" className="item fw-bolder">
+                                                        <NavLink to="/" className="item fw-bolder ms-3">
                                                                 Home
                                                         </NavLink>
+                                                </li>
+                                                <li className="nav-item">
                                                         {
                                                                 user?.email ?
-                                                                        <NavLink to="" className="item fw-bolder ms-3 me-3">
-                                                                                <img src={user.photoURL} className="rounded-circle img-fluid" width="50" alt="" />
+                                                                        <NavLink to="" className="item fw-bolder ms-3">
+                                                                                <img src={user.photoURL} className="rounded-circle img-fluid" width="38" alt="" />
                                                                         </NavLink>
                                                                         :
                                                                         ''
                                                         }
+                                                </li>
+                                                <li className="nav-item">
                                                         {
                                                                 user?.email ?
                                                                         <NavLink onClick={logOut} to="/" className="item ms-2">
@@ -39,7 +43,6 @@ const Header = () => {
                                                                         </NavLink>
                                                         }
                                                 </li>
-
                                         </ul>
                                 </div>
                         </div>
