@@ -1,0 +1,8 @@
+.item {
+        text-decoration: none;
+        color: black;
+}
+
+.item:hover {
+        color: rgb(255, 0, 0);
+}

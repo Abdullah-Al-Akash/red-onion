@@ -21,15 +21,23 @@ const Foods = () => {
                                 <button onClick={() => handleFood('lunch')} className="btn btn-outline-danger food-btn fw-bolder btn-lg ms-3">Lunch</button>
                                 <button onClick={() => handleFood('dinner')} className="btn btn-outline-danger food-btn fw-bolder btn-lg ms-3">Dinner</button>
                         </div>
-                        <div className="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
-                                {
-                                        foods.map(food => <Food
-                                                key={food.id}
-                                                food={food}
-                                        >
-                                        </Food>)
-                                }
-                        </div>
+                        {
+                                foods.length ?
+                                        <div className="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
+                                                {
+                                                        foods.map(food => <Food
+                                                                key={food.id}
+                                                                food={food}
+                                                        >
+                                                        </Food>)
+                                                }
+                                        </div>
+                                        :
+                                        <div className="text-center">
+                                                <img src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" className="img-fluid" alt="" />
+                                        </div>
+                        }
+
 
                 </div>
         );
