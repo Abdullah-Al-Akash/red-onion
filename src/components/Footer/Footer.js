@@ -4,7 +4,7 @@ import logo from '../../images/logo-main.png'
 const Footer = () => {
         return (
                 <div className="bg-dark p-5">
-                        <div className="row container text-light">
+                        <div className="row container brand-color">
                                 <div className="col-lg-6">
                                         <img src={logo} className="img-fluid mb-5" width="150px" alt="" />
                                 </div>

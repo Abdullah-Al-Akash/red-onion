@@ -17,13 +17,13 @@ const Foods = () => {
         return (
                 <div className="container mt-5 pb-5">
                         <div className="text-center mb-5">
-                                <button onClick={() => handleFood('breakfast')} className="btn btn-outline-danger food-btn fw-bolder btn-lg">Breakfast</button>
-                                <button onClick={() => handleFood('lunch')} className="btn btn-outline-danger food-btn fw-bolder btn-lg ms-3">Lunch</button>
-                                <button onClick={() => handleFood('dinner')} className="btn btn-outline-danger food-btn fw-bolder btn-lg ms-3">Dinner</button>
+                                <button onClick={() => handleFood('breakfast')} className="btn btn-outline-danger food-btn fw-bolder btn-lg brand-color">Breakfast</button>
+                                <button onClick={() => handleFood('lunch')} className="btn btn-outline-danger food-btn fw-bolder btn-lg ms-3 brand-color">Lunch</button>
+                                <button onClick={() => handleFood('dinner')} className="btn btn-outline-danger food-btn fw-bolder btn-lg ms-3 brand-color">Dinner</button>
                         </div>
                         {
                                 foods.length ?
-                                        <div className="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4">
+                                        <div className="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 row-cols-1 g-4">
                                                 {
                                                         foods.map(food => <Food
                                                                 key={food.id}
