@@ -2,9 +2,10 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 import logo from '../../images/logo-main.png';
+import useAuth from '../hooks/useAuth';
 
 const Header = () => {
-
+        const { user, logOut } = useAuth();
         return (
                 <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                         <div className="container">
@@ -20,12 +21,23 @@ const Header = () => {
                                                         <NavLink to="/" className="item fw-bolder">
                                                                 Home
                                                         </NavLink>
-                                                        <NavLink to="/login" className="item ms-2">
-                                                                <button id="brand-bg" className="btn btn-danger fw-bolder">Login</button>
-                                                        </NavLink>
-                                                        <NavLink to="/signup" className="item ms-2">
-                                                                <button id="brand-bg" className="btn btn-danger fw-bolder">Sign Up</button>
-                                                        </NavLink>
+                                                        {
+                                                                user?.email ?
+                                                                        <NavLink to="" className="item fw-bolder ms-3 me-3">
+                                                                                <img src={user.photoURL} className="rounded-circle img-fluid" width="50" alt="" />
+                                                                        </NavLink>
+                                                                        :
+                                                                        ''
+                                                        }
+                                                        {
+                                                                user?.email ?
+                                                                        <NavLink onClick={logOut} to="/" className="item ms-2">
+                                                                                <button id="brand-bg" className="btn btn-danger fw-bolder">Log Out</button>
+                                                                        </NavLink> :
+                                                                        <NavLink to="/login" className="item ms-2">
+                                                                                <button id="brand-bg" className="btn btn-danger fw-bolder">Login</button>
+                                                                        </NavLink>
+                                                        }
                                                 </li>
 
                                         </ul>
