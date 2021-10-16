@@ -13,12 +13,7 @@ const useFirebase = () => {
 
         const signInWithGoogle = () => {
                 setIsLoading(true);
-                signInWithPopup(auth, googleProvider)
-                        .then(result => {
-                                setUser(result.user);
-                                console.log(result.user);
-                        })
-                        .finally(() => setIsLoading(false));
+                return signInWithPopup(auth, googleProvider)
         };
 
         // Observe User State Change:
