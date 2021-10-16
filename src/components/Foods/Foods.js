@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Foods.css';
 import fakeData from '../fakedata/fakedata';
 import Food from '../Food/Food';
 
@@ -17,9 +18,13 @@ const Foods = () => {
         return (
                 <div className="container mt-5 pb-5">
                         <div className="text-center mb-5">
-                                <button onClick={() => handleFood('breakfast')} className="btn btn-outline-danger food-btn fw-bolder btn-lg brand-color">Breakfast</button>
-                                <button onClick={() => handleFood('lunch')} className="btn btn-outline-danger food-btn fw-bolder btn-lg ms-3 brand-color">Lunch</button>
-                                <button onClick={() => handleFood('dinner')} className="btn btn-outline-danger food-btn fw-bolder btn-lg ms-3 brand-color">Dinner</button>
+                                <button onClick={() => handleFood('breakfast')} className={foods[0]?.category === 'breakfast' ? 'btn btn-outline-danger food-btn fw-bolder btn-lg active-food' : 'btn btn-outline-danger food-btn fw-bolder btn-lg'}>
+                                        Breakfast
+                                </button>
+
+                                <button onClick={() => handleFood('lunch')} className={foods[0]?.category === 'lunch' ? 'btn btn-outline-danger food-btn fw-bolder btn-lg active-food ms-2' : 'btn btn-outline-danger food-btn fw-bolder btn-lg ms-2'}>Lunch</button>
+
+                                <button onClick={() => handleFood('dinner')} className={foods[0]?.category === 'dinner' ? 'btn btn-outline-danger food-btn fw-bolder btn-lg active-food ms-2' : 'btn btn-outline-danger food-btn fw-bolder btn-lg ms-2'}>Dinner</button>
                         </div>
                         {
                                 foods.length ?

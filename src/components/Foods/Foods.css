@@ -1,0 +1,8 @@
+.active-food {
+        background: rgb(255, 0, 0);
+        color: white;
+}
+
+.normal {
+        font-size: 25px;
+}
