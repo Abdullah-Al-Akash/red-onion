@@ -8,6 +8,7 @@ const Food = (props) => {
         const url = `/food/${id}`
         const foodDetails = () => {
                 history.push(url);
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         }
         return (
                 <div className="col px-3">

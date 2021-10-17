@@ -5,3 +5,10 @@
         padding-left: 25px;
         padding-right: 25px;
 }
+
+.no-food {
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}

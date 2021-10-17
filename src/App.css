@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .brand-color {
   color: rgb(255, 0, 0);
 }

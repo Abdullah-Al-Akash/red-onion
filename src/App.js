@@ -11,13 +11,14 @@ import Header from './components/Header/Header';
 import FoodDetails from './components/FoodDetails/FoodDetails';
 import AuthProvider from './components/Contexts/AuthProvider';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import Footer from './components/Footer/Footer';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
     <div>
       <AuthProvider>
         <Router>
-          <Header />
           <Switch>
             <Route exact path="/">
               <Home />
@@ -30,6 +31,9 @@ function App() {
             </PrivateRoute>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </Router>
